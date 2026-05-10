@@ -1,0 +1,1 @@
+Get-ChildItem -Path accounts -Filter *.dat | ForEach-Object { openssl smime -encrypt -binary -aes-256-cbc -in $_.FullName -out "$($_.FullName).enc" -outform DER public.pem }
